@@ -564,12 +564,7 @@ a:hover {
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-    .vehicle-name {
-    gap: 5px;
-    font-size: 15px;
-    white-space: nowrap;
-}
+
 
     .brand {
         height: 95px;
@@ -692,9 +687,7 @@ a:hover {
         font-size: 25px;
     }
 
-    .vehicle-name {
-        font-size: 18px;
-    }
+
 
     .footer-container {
         width: calc(100% - 40px);
@@ -784,4 +777,59 @@ a:hover {
 
     font-size: 19px;
     white-space: nowrap;
+}
+/* =========================================
+   Final vehicle-name responsive correction
+   ========================================= */
+
+/* Desktop */
+.vehicle-name {
+    width: 100%;
+    margin-top: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 19px;
+    line-height: 1.35;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+/* Phone */
+@media (max-width: 600px) {
+
+    .vehicle-title {
+        width: 100%;
+        padding: 18px 10px;
+        overflow: hidden;
+    }
+
+    .vehicle-name {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 8px;
+        padding: 0 5px;
+
+        display: block;
+
+        font-size: 15px;
+        line-height: 1.4;
+        text-align: center;
+
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+    .vehicle-name span {
+        display: inline;
+    }
+
+    #vehicleDescription::before {
+        content: " ";
+    }
 }
