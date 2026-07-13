@@ -288,31 +288,19 @@ function loadVehicleData(vehicle) {
 // ===============================
 
 
-function getVehicleFromRoute(){
+function getVehicleFromRoute() {
+    let path = window.location.pathname
+        .toLowerCase()
+        .replace(/\/+$/, "");
 
-
-    let path = window.location.pathname;
-
-
-
-    // remove ending slash
-
-    if(path.length > 1 && path.endsWith("/")){
-
-        path = path.slice(0,-1);
-
+    if (path === "") {
+        path = "/";
     }
 
-
-
     return vehicles.find(vehicle =>
-
-        vehicle.route.toLowerCase() === path.toLowerCase()
-
+        vehicle.route.toLowerCase() === path
     );
-
 }
-
 
 
 
@@ -419,39 +407,37 @@ function setupMobileMenu(){
 // ===============================
 
 
-document.addEventListener(
-"DOMContentLoaded",
-()=>{
-
-
+document.addEventListener("DOMContentLoaded", () => {
     setupMobileMenu();
 
+    const vehicle = getVehicleFromRoute();
 
-
-    const vehicle =
-    getVehicleFromRoute();
-
-
-
-    if(vehicle){
-
-
+    if (vehicle) {
         loadVehicleData(vehicle);
-
-
-    }
-
-    else{
-
-
-        console.log(
-            "No vehicle found for this route"
+        document.title = vehicle.data.vehicleName;
+    } else {
+        console.error(
+            "No vehicle found for route:",
+            window.location.pathname
         );
 
-
+        document.body.innerHTML = `
+            <main style="
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding: 30px;
+            ">
+                <div>
+                    <h1>Vehicle not found</h1>
+                    <p>No vehicle is configured for this address.</p>
+                    <a href="/">Return to home page</a>
+                </div>
+            </main>
+        `;
     }
-
-
-
 });
 ```
