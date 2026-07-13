@@ -1,3 +1,4 @@
+```
 "use strict";
 
 
@@ -95,7 +96,7 @@ const vehicles = [
     },
 
 
-    
+
 
 
     // ===============================
@@ -289,15 +290,19 @@ function loadVehicleData(vehicle) {
 
 function getVehicleFromRoute(){
 
+
     let path = window.location.pathname;
 
 
+
     // remove ending slash
+
     if(path.length > 1 && path.endsWith("/")){
 
         path = path.slice(0,-1);
 
     }
+
 
 
     return vehicles.find(vehicle =>
@@ -307,6 +312,7 @@ function getVehicleFromRoute(){
     );
 
 }
+
 
 
 
@@ -448,3 +454,4 @@ document.addEventListener(
 
 
 });
+```
