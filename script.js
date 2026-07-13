@@ -7,16 +7,10 @@
 
 const vehicles = [
 
-    // ===============================
-    // Toyota Hilux
-    // URL: https://gso-org.site/#/toyota
-    // ===============================
-
     {
         route: "/toyota",
 
         data: {
-
             ccrNumber: "509192",
             approvedDate: "01 January 2026",
 
@@ -82,63 +76,44 @@ const vehicles = [
 
             additionalInformation:
                 "Also comply with the National regulations for member countries mentioned in the Annex of the list of Technical Regulations for MV 202MY-D3, when exporting to those countries. The seating reference point of the lowest seat exceeds 700mm from the ground. This vehicle type complies with ECE13. This vehicle is only for Saudi Arabia, Kuwait and Qatar market."
-
         }
-
     },
 
-
-    // ===============================
-    // Kia Sportage
-    // URL: https://gso-org.site/#/kia
-    // ===============================
 
     {
         route: "/kia",
 
         data: {
-
             ccrNumber: "782341",
-
             approvedDate: "15 February 2026",
 
             manufacturer: "KIA Corporation",
 
             vehicleName: "KIA SPORTAGE",
-
-            vehicleDescription:
-                "(NQ5) 2.0L SUV AWD 5 Doors",
+            vehicleDescription: "(NQ5) 2.0L SUV AWD 5 Doors",
 
             category: "SUV",
-
             modelYear: "2026",
-
             country: "SOUTH KOREA",
 
             productionMonth: "3",
-
             productionYear: "2026",
 
             vin: "KNAPM81A6T7001234",
 
             maxWeight: "2200 kg",
-
             curbWeight: "1650 kg",
 
             frontAxle: "1100 kg",
-
             rearAxle: "1200 kg",
 
             length: "4660 mm",
-
             width: "1865 mm",
-
             height: "1660 mm",
 
             wheelbase: "2755 mm",
 
             frontTrack: "1615 mm",
-
             rearTrack: "1622 mm",
 
             bodyType: "Monocoque Body",
@@ -174,35 +149,73 @@ const vehicles = [
 
             additionalInformation:
                 "This vehicle complies with applicable Gulf technical regulations and safety standards."
-
         }
-
     }
 
 ];
 
 
 // ===============================
-// Store Original Page Content
+// Read and Normalize Hash Route
 // ===============================
 
-let originalPageContent = "";
+function getCurrentRoute() {
+
+    let route = window.location.hash;
+
+    // Remove "#"
+    route = route.replace(/^#/, "");
+
+    // Remove spaces
+    route = route.trim();
+
+    // Use Toyota when the URL has no hash
+    if (!route) {
+        return "/toyota";
+    }
+
+    // Support both #toyota and #/toyota
+    if (!route.startsWith("/")) {
+        route = "/" + route;
+    }
+
+    // Remove trailing slashes
+    route = route.replace(/\/+$/, "");
+
+    return route.toLowerCase();
+
+}
 
 
 // ===============================
-// Fill HTML Data
+// Find Vehicle
 // ===============================
 
-function loadVehicleData(vehicle) {
+function findVehicleByRoute(route) {
 
-    const data = vehicle.data;
+    return vehicles.find(function (vehicle) {
 
-    Object.keys(data).forEach((key) => {
+        return vehicle.route.toLowerCase() === route;
+
+    });
+
+}
+
+
+// ===============================
+// Clear Existing Vehicle Values
+// ===============================
+
+function clearVehicleData() {
+
+    const vehicleKeys = Object.keys(vehicles[0].data);
+
+    vehicleKeys.forEach(function (key) {
 
         const element = document.getElementById(key);
 
         if (element) {
-            element.textContent = data[key];
+            element.textContent = "";
         }
 
     });
@@ -211,206 +224,102 @@ function loadVehicleData(vehicle) {
 
 
 // ===============================
-// Normalize Hash Route
+// Insert Vehicle Data Into HTML
 // ===============================
 
-function normalizeRoute(hash) {
+function loadVehicleData(vehicle) {
 
-    let route = hash.trim().toLowerCase();
+    clearVehicleData();
 
-    // Remove the # character
-    route = route.replace(/^#/, "");
+    const data = vehicle.data;
 
-    // Add slash when the user writes #toyota
-    if (route && !route.startsWith("/")) {
-        route = `/${route}`;
-    }
+    Object.keys(data).forEach(function (key) {
 
-    // Remove duplicate ending slashes
-    route = route.replace(/\/+$/, "");
+        const element = document.getElementById(key);
 
-    // Default vehicle when there is no hash route
-    if (!route) {
-        route = "/toyota";
-    }
+        if (!element) {
 
-    return route;
+            console.warn(
+                "Missing HTML element with id:",
+                key
+            );
 
-}
+            return;
 
+        }
 
-// ===============================
-// Detect Vehicle From Hash Route
-// ===============================
-
-function getVehicleFromRoute() {
-
-    const currentRoute = normalizeRoute(
-        window.location.hash
-    );
-
-    return vehicles.find((vehicle) => {
-
-        const vehicleRoute =
-            vehicle.route.toLowerCase().replace(/\/+$/, "");
-
-        return vehicleRoute === currentRoute;
+        element.textContent = data[key];
 
     });
 
+    document.title =
+        data.vehicleName + " - Vehicle Conformity";
+
 }
 
 
 // ===============================
-// Vehicle Not Found Page
+// Display Vehicle Not Found
 // ===============================
 
-function showVehicleNotFound() {
+function showVehicleNotFound(route) {
 
-    const route =
-        normalizeRoute(window.location.hash);
+    clearVehicleData();
 
     document.title = "Vehicle Not Found";
 
-    document.body.innerHTML = `
-        <main style="
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 30px;
-            background: #f5f5f5;
-        ">
-            <div style="
-                width: 100%;
-                max-width: 600px;
-                padding: 40px;
-                box-sizing: border-box;
-                background: #ffffff;
-                border-radius: 12px;
-                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            ">
-                <h1 style="
-                    margin-top: 0;
-                    margin-bottom: 15px;
-                    font-size: 34px;
-                ">
-                    Vehicle not found
-                </h1>
+    const vehicleName =
+        document.getElementById("vehicleName");
 
-                <p style="
-                    margin-bottom: 10px;
-                    color: #555555;
-                ">
-                    No vehicle is configured for this route:
-                </p>
+    const vehicleDescription =
+        document.getElementById("vehicleDescription");
 
-                <strong style="
-                    display: block;
-                    margin-bottom: 30px;
-                    font-size: 18px;
-                    word-break: break-word;
-                ">
-                    ${escapeHtml(route)}
-                </strong>
+    if (vehicleName) {
+        vehicleName.textContent = "VEHICLE NOT FOUND";
+    }
 
-                <a
-                    href="#/toyota"
-                    style="
-                        display: inline-block;
-                        margin: 5px;
-                        padding: 12px 20px;
-                        color: #ffffff;
-                        background: #111111;
-                        text-decoration: none;
-                        border-radius: 6px;
-                    "
-                >
-                    Open Toyota
-                </a>
-
-                <a
-                    href="#/kia"
-                    style="
-                        display: inline-block;
-                        margin: 5px;
-                        padding: 12px 20px;
-                        color: #111111;
-                        background: #eeeeee;
-                        text-decoration: none;
-                        border-radius: 6px;
-                    "
-                >
-                    Open Kia
-                </a>
-            </div>
-        </main>
-    `;
-
-}
-
-
-// ===============================
-// Protect Text Inserted Into HTML
-// ===============================
-
-function escapeHtml(value) {
-
-    return String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-
-}
-
-
-// ===============================
-// Restore Original HTML Page
-// ===============================
-
-function restoreOriginalPage() {
-
-    if (
-        originalPageContent &&
-        document.body.innerHTML !== originalPageContent
-    ) {
-        document.body.innerHTML = originalPageContent;
-        setupMobileMenu();
+    if (vehicleDescription) {
+        vehicleDescription.textContent =
+            "No vehicle is configured for route " + route;
     }
 
 }
 
 
 // ===============================
-// Render Vehicle
+// Render Current Route
 // ===============================
 
 function renderVehicle() {
 
-    const vehicle = getVehicleFromRoute();
+    const currentRoute = getCurrentRoute();
+
+    const vehicle =
+        findVehicleByRoute(currentRoute);
+
+    console.log("script.js loaded successfully");
+    console.log("Current hash:", window.location.hash);
+    console.log("Current route:", currentRoute);
 
     if (!vehicle) {
 
         console.error(
-            "No vehicle found for hash route:",
-            window.location.hash
+            "No vehicle found for route:",
+            currentRoute
         );
 
-        showVehicleNotFound();
+        showVehicleNotFound(currentRoute);
+
         return;
 
     }
 
-    restoreOriginalPage();
+    console.log(
+        "Vehicle loaded:",
+        vehicle.data.vehicleName
+    );
 
     loadVehicleData(vehicle);
-
-    document.title = vehicle.data.vehicleName;
 
 }
 
@@ -431,38 +340,34 @@ function setupMobileMenu() {
         return;
     }
 
-    /*
-     * Prevent adding the same click listener more than once
-     * when the original page is restored.
-     */
-    if (menuButton.dataset.menuReady === "true") {
-        return;
-    }
+    menuButton.addEventListener(
+        "click",
+        function () {
 
-    menuButton.dataset.menuReady = "true";
+            const isOpen =
+                mobileMenu.classList.toggle("open");
 
-    menuButton.addEventListener("click", () => {
+            menuButton.classList.toggle(
+                "open",
+                isOpen
+            );
 
-        const isOpen =
-            mobileMenu.classList.toggle("open");
+            menuButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
 
-        menuButton.classList.toggle(
-            "open",
-            isOpen
-        );
+        }
+    );
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            String(isOpen)
-        );
+    const mobileLinks =
+        mobileMenu.querySelectorAll("a");
 
-    });
+    mobileLinks.forEach(function (link) {
 
-    mobileMenu
-        .querySelectorAll("a")
-        .forEach((link) => {
-
-            link.addEventListener("click", () => {
+        link.addEventListener(
+            "click",
+            function () {
 
                 mobileMenu.classList.remove("open");
 
@@ -473,9 +378,10 @@ function setupMobileMenu() {
                     "false"
                 );
 
-            });
+            }
+        );
 
-        });
+    });
 
 }
 
@@ -484,27 +390,26 @@ function setupMobileMenu() {
 // Start Website
 // ===============================
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-    /*
-     * Save the original HTML so it can be restored
-     * after displaying the vehicle-not-found page.
-     */
-    originalPageContent = document.body.innerHTML;
+        setupMobileMenu();
+        renderVehicle();
 
-    setupMobileMenu();
-
-    renderVehicle();
-
-});
+    }
+);
 
 
 // ===============================
-// Update Page When Hash Changes
+// Update When Hash Changes
 // ===============================
 
-window.addEventListener("hashchange", () => {
+window.addEventListener(
+    "hashchange",
+    function () {
 
-    renderVehicle();
+        renderVehicle();
 
-});
+    }
+);
