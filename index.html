@@ -2,139 +2,80 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta 
-        name="viewport" 
+    <meta
+        name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
 
     <title>Vehicle Conformity</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 
+    <!-- Change the version number whenever you update script.js -->
+    <script src="./script.js?v=20260713-1" defer></script>
 </head>
-
 
 <body>
 
-
 <header class="site-header">
-
     <div class="header-container">
 
-
-        <a href="index.html" class="brand">
-
+        <a href="./#/toyota" class="brand">
             <div class="main-logo">
-
-                <img 
-                    src="image/mainlogo.png"
+                <img
+                    src="./image/mainlogo.png"
                     alt="Vehicle portal logo"
                 >
-
             </div>
-
         </a>
 
-
-
         <nav class="main-navigation">
-
-            <a href="index.html">
-                Home
-            </a>
-
-
-            <a href="index.html">
-                Fuel Economy Guide
-            </a>
-
-
-            <a href="index.html">
-                About Mutabiq
-            </a>
-
-
+            <a href="./#/toyota">Home</a>
+            <a href="./#/toyota">Fuel Economy Guide</a>
+            <a href="./#/toyota">About Mutabiq</a>
         </nav>
-
-
-
 
         <div class="header-actions">
 
-
-            <a href="index.html" class="header-action arabic-action">
-
+            <a href="./#/toyota" class="header-action arabic-action">
                 <img
-                    src="image/world.png"
+                    src="./image/world.png"
                     alt="Arabic"
                     class="header-action-icon"
                 >
-
-                <span>
-                    العربية
-                </span>
-
+                <span>العربية</span>
             </a>
 
-
-
-
-            <a href="index.html" class="header-action">
-
+            <a href="./#/toyota" class="header-action">
                 <img
-                    src="image/userguide.png"
+                    src="./image/userguide.png"
                     alt="User Guide"
                     class="header-action-icon"
                 >
-
-                <span>
-                    User Guide
-                </span>
-
+                <span>User Guide</span>
             </a>
 
-
-
-
-            <a href="index.html" class="header-action">
-
+            <a href="./#/toyota" class="header-action">
                 <img
-                    src="image/help.png"
+                    src="./image/help.png"
                     alt="Help"
                     class="header-action-icon"
                 >
-
-                <span>
-                    Help
-                </span>
-
+                <span>Help</span>
             </a>
 
-
-
-
-            <a href="index.html" class="header-action">
-
+            <a href="./#/toyota" class="header-action">
                 <img
-                    src="image/login.png"
+                    src="./image/login.png"
                     alt="Login"
                     class="header-action-icon"
                 >
-
-                <span>
-                    Login
-                </span>
-
+                <span>Login</span>
             </a>
 
-
         </div>
-
-
-
 
         <button
             class="mobile-menu-button"
@@ -142,1164 +83,610 @@
             aria-label="Open menu"
             aria-expanded="false"
         >
-
             <span></span>
             <span></span>
             <span></span>
-
         </button>
 
-
     </div>
-
 </header>
 
 
-
-
-
 <div class="mobile-menu-panel" id="mobileMenu">
-
-
-    <a href="index.html">
-        العربية
-    </a>
-
-
-    <a href="index.html">
-        Home
-    </a>
-
-
-    <a href="index.html">
-        Fuel Economy Guide
-    </a>
-
-
-    <a href="index.html">
-        About Mutabiq
-    </a>
-
-
-    <a href="index.html">
-        User Guide
-    </a>
-
-
-    <a href="index.html">
-        Help
-    </a>
-
-
-    <a href="index.html">
-        Login
-    </a>
-
-
+    <a href="./#/toyota">العربية</a>
+    <a href="./#/toyota">Home</a>
+    <a href="./#/toyota">Fuel Economy Guide</a>
+    <a href="./#/toyota">About Mutabiq</a>
+    <a href="./#/toyota">User Guide</a>
+    <a href="./#/toyota">Help</a>
+    <a href="./#/toyota">Login</a>
 </div>
-
-
-
-
-
 
 
 <div class="breadcrumb-wrapper">
-
-
     <div class="breadcrumb">
-
-
-        <a href="index.html">
-            Overview
-        </a>
-
-
-        <span>
-            /
-        </span>
-
-
-        <span>
-            Verification
-        </span>
-
-
+        <a href="./#/toyota">Overview</a>
+        <span>/</span>
+        <span>Verification</span>
     </div>
-
-
 </div>
-
-
-
-
-
-
 
 
 <main class="main-container">
 
+    <section class="certificate-section">
 
+        <div class="page-title-line">
+            <h1>Conformity Certificates</h1>
+        </div>
 
-<section class="certificate-section">
+        <div class="certificate-card">
 
+            <div class="approval-message">
+                This certificate has been approved.
+            </div>
 
+            <div class="information-table">
 
-<div class="page-title-line">
+                <div class="information-row">
+                    <div class="information-label">
+                        CCR Number
+                    </div>
 
-    <h1>
-        Conformity Certificates
-    </h1>
+                    <div
+                        class="information-value"
+                        id="ccrNumber"
+                    ></div>
+                </div>
 
-</div>
+                <div class="information-row">
+                    <div class="information-label">
+                        Approved On
+                    </div>
 
+                    <div
+                        class="information-value"
+                        id="approvedDate"
+                    ></div>
+                </div>
 
+                <div class="information-row">
+                    <div class="information-label">
+                        Manufacturer
+                    </div>
 
+                    <div
+                        class="information-value"
+                        id="manufacturer"
+                    ></div>
+                </div>
 
+            </div>
 
-<div class="certificate-card">
 
+            <div class="vehicle-title">
 
+                <div class="vehicle-heading">
+                    Motor Vehicle
+                </div>
 
+                <div class="vehicle-name">
+                    <span id="vehicleName"></span>
 
+                    <br>
 
-<div class="approval-message">
+                    <span id="vehicleDescription"></span>
+                </div>
 
-    This certificate has been approved.
+            </div>
 
-</div>
 
+            <div class="information-table">
 
+                <div class="information-row">
+                    <div class="information-label">
+                        Category
+                    </div>
 
+                    <div
+                        class="information-value"
+                        id="category"
+                    ></div>
+                </div>
 
+                <div class="information-row">
+                    <div class="information-label">
+                        Model Year
+                    </div>
 
+                    <div
+                        class="information-value"
+                        id="modelYear"
+                    ></div>
+                </div>
 
+                <div class="information-row">
+                    <div class="information-label">
+                        Country of Production
+                    </div>
 
+                    <div
+                        class="information-value"
+                        id="country"
+                    ></div>
+                </div>
 
-<div class="information-table">
+                <div class="information-row">
+                    <div class="information-label">
+                        Produced in and after
+                    </div>
 
+                    <div class="information-value">
+                        Month
+                        <strong id="productionMonth"></strong>
 
+                        &nbsp;&nbsp;
 
-<div class="information-row">
+                        Year
+                        <strong id="productionYear"></strong>
+                    </div>
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        VIN
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="vin"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <h2>Technical Specifications</h2>
+
+
+            <div class="section-heading">
+                Weights
+            </div>
+
+            <div class="information-table">
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Max Vehicle Weight
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="maxWeight"
+                    ></div>
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Curb
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="curbWeight"
+                    ></div>
+                </div>
+
+                <div class="subheading">
+                    Maximum Axle Weight
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Front
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="frontAxle"
+                    ></div>
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Rear
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="rearAxle"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <div class="section-heading">
+                Dimensions
+            </div>
+
+            <div class="information-table">
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Length
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="length"
+                    ></div>
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Width
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="width"
+                    ></div>
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Height
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="height"
+                    ></div>
+                </div>
+
+                <div class="subheading">
+                    Wheelbase
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        (F1–R1)
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="wheelbase"
+                    ></div>
+                </div>
+
+                <div class="subheading">
+                    Track
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Front
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="frontTrack"
+                    ></div>
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Rear
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="rearTrack"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <div class="section-heading">
+                Body and Seating
+            </div>
+
+            <div class="information-table">
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Type of Chassis and Body
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="bodyType"
+                    ></div>
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Number of Passengers
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="passengers"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <div class="section-heading">
+                Engine
+            </div>
+
+            <div class="information-table">
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Engine Type
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="engineType"
+                    ></div>
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Cylinders
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="cylinders"
+                    ></div>
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Displacement
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="displacement"
+                    ></div>
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Air Intake
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="airIntake"
+                    ></div>
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Net Engine Power
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="enginePower"
+                    ></div>
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Pollutant Limit
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="pollutantLimit"
+                    ></div>
+                </div>
+
+                <div class="information-row separated-row">
+                    <div class="information-label">
+                        Transmission
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="transmission"
+                    ></div>
+                </div>
+
+                <div class="information-row separated-row">
+                    <div class="information-label">
+                        eCall System
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="ecall"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <div class="section-heading">
+                Brakes
+            </div>
+
+            <div class="information-table">
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Service Brakes
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="serviceBrakes"
+                    ></div>
+                </div>
+
+                <div class="information-row">
+                    <div class="information-label">
+                        Emergency Brakes
+                    </div>
+
+                    <div
+                        class="information-value"
+                        id="emergencyBrakes"
+                    ></div>
+                </div>
 
-    <div class="information-label">
-        CCR Number
-    </div>
+            </div>
 
 
-    <div class="information-value" id="ccrNumber">
+            <div class="section-heading">
+                Fuel Economy
+            </div>
+
+            <div class="information-table">
 
-    </div>
+                <div class="information-row">
+                    <div class="information-label">
+                        Motor Vehicle Class
+                    </div>
 
+                    <div
+                        class="information-value"
+                        id="vehicleClass"
+                    ></div>
+                </div>
 
-</div>
+                <div class="information-row">
+                    <div class="information-label">
+                        Combined Fuel Economy
+                    </div>
 
+                    <div class="information-value">
+                        <span id="fuelEconomy"></span>
 
+                        &nbsp;—&nbsp;
 
+                        <strong id="fuelRating"></strong>
+                    </div>
+                </div>
 
+            </div>
 
-<div class="information-row">
 
+            <div class="section-heading">
+                Any other information or local standards to be complied
+            </div>
 
-    <div class="information-label">
-        Approved On
-    </div>
+            <div
+                class="additional-information"
+                id="additionalInformation"
+            ></div>
 
+        </div>
 
-    <div class="information-value" id="approvedDate">
+    </section>
 
-    </div>
 
+    <aside class="sidebar">
 
-</div>
+        <div class="sidebar-card fuel-card">
 
+            <div class="sidebar-icon">
+                <img
+                    src="./image/fuel pompe logo.png"
+                    alt="Fuel economy guide"
+                >
+            </div>
 
+            <h3>Fuel Economy Guide</h3>
 
+            <p>
+                Browse and compare vehicle models based on fuel economy
+                and technical specifications.
+            </p>
 
+            <a href="./#/toyota">
+                Browse the Guide
+            </a>
 
-<div class="information-row">
+        </div>
 
 
-    <div class="information-label">
-        Manufacturer
-    </div>
+        <div class="sidebar-card">
 
+            <div class="sidebar-icon">
+                <img
+                    src="./image/customers clearns.png"
+                    alt="Custom clearance guide"
+                >
+            </div>
 
-    <div class="information-value" id="manufacturer">
+            <h3>Custom Clearance Guide</h3>
 
-    </div>
+            <p>
+                An indicative guide for customs clearance of new motor
+                vehicles, motorcycles and tyres.
+            </p>
 
+            <a href="./#/toyota">
+                Read the Guidelines
+            </a>
 
-</div>
+        </div>
 
 
+        <div class="sidebar-card">
 
-</div>
+            <div class="sidebar-icon">
+                <img
+                    src="./image/about demo.png"
+                    alt="About this Mutabiq"
+                >
+            </div>
 
+            <h3>About This Mutabiq</h3>
 
+            <p>
+                Gulf Conformity Certificates, Fuel Economy Labels,
+                Recall Campaigns, VINs...
+            </p>
 
+            <a href="./#/toyota">
+                Learn More
+            </a>
 
+        </div>
 
-
-
-
-
-<div class="vehicle-title">
-
-
-<div class="vehicle-heading">
-
-    Motor Vehicle
-
-</div>
-
-
-
-
-<div class="vehicle-name">
-
-
-    <span id="vehicleName"></span>
-
-    <br>
-
-    <span id="vehicleDescription"></span>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="information-table">
-
-
-
-<div class="information-row">
-
-
-    <div class="information-label">
-        Category
-    </div>
-
-
-    <div class="information-value" id="category">
-
-    </div>
-
-
-</div>
-
-
-
-
-
-<div class="information-row">
-
-
-    <div class="information-label">
-        Model Year
-    </div>
-
-
-    <div class="information-value" id="modelYear">
-
-    </div>
-
-
-</div>
-
-
-
-
-
-<div class="information-row">
-
-
-    <div class="information-label">
-        Country of Production
-    </div>
-
-
-    <div class="information-value" id="country">
-
-    </div>
-
-
-</div>
-
-
-
-
-
-<div class="information-row">
-
-
-    <div class="information-label">
-        Produced in and after
-    </div>
-
-
-
-    <div class="information-value">
-
-        Month 
-        <strong id="productionMonth"></strong>
-
-        &nbsp;&nbsp;
-
-        Year
-
-        <strong id="productionYear"></strong>
-
-
-    </div>
-
-
-
-</div>
-
-
-
-
-
-<div class="information-row">
-
-
-    <div class="information-label">
-        VIN
-    </div>
-
-
-    <div class="information-value" id="vin">
-
-    </div>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-<h2>
-    Technical Specifications
-</h2>
-
-
-
-
-
-<div class="section-heading">
-    Weights
-</div>
-
-
-
-
-
-<div class="information-table">
-
-
-<div class="information-row">
-
-    <div class="information-label">
-        Max Vehicle Weight
-    </div>
-
-
-    <div class="information-value" id="maxWeight">
-
-    </div>
-
-
-</div>
-
-
-
-
-
-<div class="information-row">
-
-
-    <div class="information-label">
-        Curb
-    </div>
-
-
-    <div class="information-value" id="curbWeight">
-
-    </div>
-
-
-</div>
-
-
-
-
-
-<div class="subheading">
-
-    Maximum Axle Weight
-
-</div>
-
-
-
-
-
-<div class="information-row">
-
-
-    <div class="information-label">
-        Front
-    </div>
-
-
-    <div class="information-value" id="frontAxle">
-
-    </div>
-
-
-</div>
-
-
-
-
-<div class="information-row">
-
-
-    <div class="information-label">
-        Rear
-    </div>
-
-
-    <div class="information-value" id="rearAxle">
-
-    </div>
-
-
-</div>
-
-
-
-</div>
-
-<!-- Dimensions -->
-
-<div class="section-heading">
-    Dimensions
-</div>
-
-
-<div class="information-table">
-
-
-<div class="information-row">
-
-    <div class="information-label">
-        Length
-    </div>
-
-    <div class="information-value" id="length">
-
-    </div>
-
-</div>
-
-
-
-<div class="information-row">
-
-    <div class="information-label">
-        Width
-    </div>
-
-    <div class="information-value" id="width">
-
-    </div>
-
-</div>
-
-
-
-<div class="information-row">
-
-    <div class="information-label">
-        Height
-    </div>
-
-    <div class="information-value" id="height">
-
-    </div>
-
-</div>
-
-
-
-<div class="subheading">
-    Wheelbase
-</div>
-
-
-
-<div class="information-row">
-
-    <div class="information-label">
-        (F1–R1)
-    </div>
-
-    <div class="information-value" id="wheelbase">
-
-    </div>
-
-</div>
-
-
-
-<div class="subheading">
-    Track
-</div>
-
-
-
-<div class="information-row">
-
-    <div class="information-label">
-        Front
-    </div>
-
-    <div class="information-value" id="frontTrack">
-
-    </div>
-
-</div>
-
-
-
-
-<div class="information-row">
-
-    <div class="information-label">
-        Rear
-    </div>
-
-    <div class="information-value" id="rearTrack">
-
-    </div>
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-<!-- Body and Seating -->
-
-
-<div class="section-heading">
-
-    Body and Seating
-
-</div>
-
-
-
-
-<div class="information-table">
-
-
-<div class="information-row">
-
-
-    <div class="information-label">
-        Type of Chassis and Body
-    </div>
-
-
-    <div class="information-value" id="bodyType">
-
-    </div>
-
-
-</div>
-
-
-
-
-
-<div class="information-row">
-
-
-    <div class="information-label">
-        Number of Passengers
-    </div>
-
-
-    <div class="information-value" id="passengers">
-
-    </div>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- Engine -->
-
-
-<div class="section-heading">
-
-    Engine
-
-</div>
-
-
-
-
-<div class="information-table">
-
-
-
-<div class="information-row">
-
-    <div class="information-label">
-        Engine Type
-    </div>
-
-    <div class="information-value" id="engineType">
-
-    </div>
-
-</div>
-
-
-
-
-<div class="information-row">
-
-    <div class="information-label">
-        Cylinders
-    </div>
-
-    <div class="information-value" id="cylinders">
-
-    </div>
-
-</div>
-
-
-
-
-
-<div class="information-row">
-
-    <div class="information-label">
-        Displacement
-    </div>
-
-    <div class="information-value" id="displacement">
-
-    </div>
-
-</div>
-
-
-
-
-
-<div class="information-row">
-
-    <div class="information-label">
-        Air Intake
-    </div>
-
-    <div class="information-value" id="airIntake">
-
-    </div>
-
-</div>
-
-
-
-
-
-<div class="information-row">
-
-    <div class="information-label">
-        Net Engine Power
-    </div>
-
-    <div class="information-value" id="enginePower">
-
-    </div>
-
-</div>
-
-
-
-
-
-<div class="information-row">
-
-    <div class="information-label">
-        Pollutant Limit
-    </div>
-
-    <div class="information-value" id="pollutantLimit">
-
-    </div>
-
-</div>
-
-
-
-
-
-<div class="information-row separated-row">
-
-
-    <div class="information-label">
-        Transmission
-    </div>
-
-
-    <div class="information-value" id="transmission">
-
-    </div>
-
-
-</div>
-
-
-
-
-
-<div class="information-row separated-row">
-
-
-    <div class="information-label">
-        eCall System
-    </div>
-
-
-    <div class="information-value" id="ecall">
-
-    </div>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- Brakes -->
-
-
-<div class="section-heading">
-
-    Brakes
-
-</div>
-
-
-
-
-<div class="information-table">
-
-
-
-<div class="information-row">
-
-
-    <div class="information-label">
-        Service Brakes
-    </div>
-
-
-    <div class="information-value" id="serviceBrakes">
-
-    </div>
-
-
-</div>
-
-
-
-
-
-<div class="information-row">
-
-
-    <div class="information-label">
-        Emergency Brakes
-    </div>
-
-
-    <div class="information-value" id="emergencyBrakes">
-
-    </div>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- Fuel economy -->
-
-
-<div class="section-heading">
-
-    Fuel Economy
-
-</div>
-
-
-
-
-<div class="information-table">
-
-
-
-<div class="information-row">
-
-
-    <div class="information-label">
-        Motor Vehicle Class
-    </div>
-
-
-    <div class="information-value" id="vehicleClass">
-
-    </div>
-
-
-</div>
-
-
-
-
-
-<div class="information-row">
-
-
-    <div class="information-label">
-        Combined Fuel Economy
-    </div>
-
-
-    <div class="information-value">
-
-        <span id="fuelEconomy"></span>
-
-        &nbsp;—&nbsp;
-
-        <strong id="fuelRating"></strong>
-
-
-    </div>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="section-heading">
-
-    Any other information or local standards to be complied
-
-</div>
-
-
-
-
-
-<div class="additional-information" id="additionalInformation">
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-
-
-
-
-<!-- Sidebar -->
-
-
-<aside class="sidebar">
-
-
-
-
-
-<div class="sidebar-card fuel-card">
-
-
-    <div class="sidebar-icon">
-
-
-        <img
-            src="image/fuel pompe logo.png"
-            alt="Fuel economy guide"
-        >
-
-
-    </div>
-
-
-
-
-    <h3>
-        Fuel Economy Guide
-    </h3>
-
-
-
-
-    <p>
-        Browse and compare vehicle models based on fuel economy
-        and technical specifications.
-    </p>
-
-
-
-
-    <a href="index.html">
-        Browse the Guide
-    </a>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="sidebar-card">
-
-
-    <div class="sidebar-icon">
-
-
-        <img
-            src="image/customers clearns.png"
-            alt="Custom clearance guide"
-        >
-
-
-    </div>
-
-
-
-
-
-    <h3>
-        Custom Clearance Guide
-    </h3>
-
-
-
-
-    <p>
-        An indicative guide for customs clearance of new motor
-        vehicles, motorcycles and tyres.
-    </p>
-
-
-
-
-    <a href="index.html">
-        Read the Guidelines
-    </a>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="sidebar-card">
-
-
-    <div class="sidebar-icon">
-
-
-        <img
-            src="image/about demo.png"
-            alt="About this Mutabiq"
-        >
-
-
-    </div>
-
-
-
-
-
-    <h3>
-        About This Mutabiq
-    </h3>
-
-
-
-
-    <p>
-        Gulf Conformity Certificates, Fuel Economy Labels, Recall Campaigns, VINs...
-    </p>
-
-
-
-
-    <a href="index.html">
-        Learn More
-    </a>
-
-
-</div>
-
-
-
-
-
-
-</aside>
-
-
-
-
+    </aside>
 
 </main>
 
 
-
-
-
-
-
-
-
 <footer class="site-footer">
 
+    <div class="footer-container">
 
-<div class="footer-container">
+        <div class="footer-links">
+            <a href="./#/toyota">Privacy Policy</a>
+            <a href="./#/toyota">Terms of Use</a>
+        </div>
 
-
-    <div class="footer-links">
-
-
-        <a href="index.html">
-            Privacy Policy
-        </a>
-
-
-
-        <a href="index.html">
-            Terms of Use
-        </a>
-
-
+        <div class="copyright">
+            © GSO 2026. All rights reserved.
+        </div>
 
     </div>
-
-
-
-
-
-    <div class="copyright">
-
-        © GSO 2026. All rights reserved.
-
-    </div>
-
-
-
-
-</div>
-
-
 
 </footer>
 
-
-
-
-
-
-
-<script src="script.js"></script>
-
-
 </body>
-
-
 </html>
