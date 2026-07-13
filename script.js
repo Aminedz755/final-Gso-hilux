@@ -8,7 +8,7 @@
 const vehicles = [
 
     {
-        route: "/509192",
+        route: "/abc",
 
         data: {
             ccrNumber: "509192",
