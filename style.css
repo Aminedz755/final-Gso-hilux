@@ -263,17 +263,26 @@ a:hover {
     align-items: center;
 }
 .production-date {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     align-items: center;
-    gap: 14px;
+    justify-content: start;
+    column-gap: 7px;
+    white-space: nowrap;
 }
 
-.production-date-group {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+.production-date > span,
+.production-date > strong {
+    margin: 0;
 }
 
+.production-date > span {
+    font-weight: 400;
+}
+
+.production-date > strong {
+    font-weight: 700;
+}
 .information-label {
     background: #eeeeee;
     font-size: 14px;
@@ -672,6 +681,7 @@ a:hover {
         padding: 12px 10px;
         font-size: 14px;
     }
+    
 
     .certificate-section h1 {
         font-size: 25px;
