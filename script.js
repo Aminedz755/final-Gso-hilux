@@ -289,28 +289,24 @@ function loadVehicleData(vehicle) {
 
 function getVehicleFromRoute(){
 
-    const params = new URLSearchParams(
-        window.location.search
-    );
+    let path = window.location.pathname;
 
 
-    const car = params.get("car");
+    // remove ending slash
+    if(path.length > 1 && path.endsWith("/")){
 
+        path = path.slice(0,-1);
 
-    if(!car){
-        return null;
     }
 
 
     return vehicles.find(vehicle =>
 
-        vehicle.route.toLowerCase() === 
-        ("/" + car).toLowerCase()
+        vehicle.route.toLowerCase() === path.toLowerCase()
 
     );
 
 }
-
 
 
 
