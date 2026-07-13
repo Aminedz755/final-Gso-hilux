@@ -262,6 +262,17 @@ a:hover {
     display: flex;
     align-items: center;
 }
+.production-date {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.production-date-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
 
 .information-label {
     background: #eeeeee;
