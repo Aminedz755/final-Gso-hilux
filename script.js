@@ -23,8 +23,8 @@ const vehicles = [
             modelYear: "2026",
             country: "THAILAND",
 
-            productionMonth: "1",
-            productionYear: "2026",
+            productionMonth: " 1",
+            productionYear: " 2026",
 
             vin: "MR0CB9CD7S3310269",
 
