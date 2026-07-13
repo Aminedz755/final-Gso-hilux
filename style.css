@@ -544,6 +544,8 @@ a:hover {
 
 /* Mobile */
 
+/* Mobile */
+
 @media (max-width: 600px) {
 
     body {
@@ -564,7 +566,7 @@ a:hover {
         display: flex;
         justify-content: space-between;
         align-items: center;
-
+    }
 
     .brand {
         height: 95px;
@@ -681,13 +683,53 @@ a:hover {
         padding: 12px 10px;
         font-size: 14px;
     }
-    
+
+    .production-date {
+        grid-template-columns: auto auto auto auto;
+        justify-content: start;
+        column-gap: 5px;
+
+        padding-left: 10px;
+        padding-right: 4px;
+
+        font-size: 12.5px;
+        white-space: nowrap;
+    }
 
     .certificate-section h1 {
         font-size: 25px;
     }
 
+    .vehicle-title {
+        width: 100%;
+        padding: 18px 10px;
+        overflow: hidden;
+    }
 
+    .vehicle-name {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 8px;
+        padding: 0 5px;
+
+        display: block;
+
+        font-size: 15px;
+        line-height: 1.4;
+        text-align: center;
+
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+    .vehicle-name span {
+        display: inline;
+    }
+
+    #vehicleDescription::before {
+        content: " ";
+    }
 
     .footer-container {
         width: calc(100% - 40px);
@@ -698,6 +740,10 @@ a:hover {
         gap: 10px;
     }
 }
+
+
+/* Header action desktop alignment */
+
 .header-action {
     display: flex;
     flex-direction: column;
@@ -724,7 +770,9 @@ a:hover {
     text-align: center;
     line-height: 1.2;
 }
-/* Fix Arabic button alignment */
+
+
+/* Arabic button alignment */
 
 .header-actions .arabic-action {
     position: relative !important;
@@ -767,22 +815,10 @@ a:hover {
     text-align: center !important;
     white-space: nowrap;
 }
-.vehicle-name {
-    margin-top: 8px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
 
-    font-size: 19px;
-    white-space: nowrap;
-}
-/* =========================================
-   Final vehicle-name responsive correction
-   ========================================= */
+/* Vehicle name desktop */
 
-/* Desktop */
 .vehicle-name {
     width: 100%;
     margin-top: 8px;
@@ -796,40 +832,4 @@ a:hover {
     line-height: 1.35;
     text-align: center;
     white-space: nowrap;
-}
-
-
-/* Phone */
-@media (max-width: 600px) {
-
-    .vehicle-title {
-        width: 100%;
-        padding: 18px 10px;
-        overflow: hidden;
-    }
-
-    .vehicle-name {
-        width: 100%;
-        max-width: 100%;
-        margin-top: 8px;
-        padding: 0 5px;
-
-        display: block;
-
-        font-size: 15px;
-        line-height: 1.4;
-        text-align: center;
-
-        white-space: normal;
-        overflow-wrap: break-word;
-        word-break: normal;
-    }
-
-    .vehicle-name span {
-        display: inline;
-    }
-
-    #vehicleDescription::before {
-        content: " ";
-    }
 }
