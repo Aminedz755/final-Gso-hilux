@@ -8,7 +8,7 @@
 const vehicles = [
 
     {
-        route: "/509192",
+        route: "/5091922",
 
         data: {
             ccrNumber: "509192",
@@ -76,10 +76,10 @@ const vehicles = [
         }
     },
     {
-        route: "/509194",
+        route: "/509192",
 
         data: {
-            ccrNumber: "509194",
+            ccrNumber: "509192",
             approvedDate: "01 January 2026",
 
             manufacturer: "Toyota Motor Corporation",
