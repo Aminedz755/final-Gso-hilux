@@ -748,3 +748,13 @@ a:hover {
     text-align: center !important;
     white-space: nowrap;
 }
+.production-date {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.production-date span {
+    display: inline-flex;
+    gap: 8px;
+}
