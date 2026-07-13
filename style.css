@@ -25,13 +25,18 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Header */
+
+/* ===============================
+   Header
+   =============================== */
 
 .site-header {
     position: sticky;
     top: 0;
     z-index: 90;
+
     height: 90px;
+
     background: #ffffff;
     border-bottom: 1px solid #c8c8c8;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
@@ -48,7 +53,10 @@ a:hover {
     align-items: center;
 }
 
-/* Logo */
+
+/* ===============================
+   Logo
+   =============================== */
 
 .brand {
     display: flex;
@@ -76,12 +84,17 @@ a:hover {
 
 .main-logo img {
     display: block;
+
     width: 180px;
     height: 180px;
+
     object-fit: contain;
 }
 
-/* Navigation */
+
+/* ===============================
+   Main navigation
+   =============================== */
 
 .main-navigation {
     position: relative;
@@ -104,7 +117,10 @@ a:hover {
     font-weight: 400;
 }
 
-/* Header actions */
+
+/* ===============================
+   Header actions
+   =============================== */
 
 .header-actions {
     position: relative;
@@ -118,16 +134,19 @@ a:hover {
 }
 
 .header-action {
-    min-width: 58px;
+    min-width: 70px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 6px;
 
     color: #0076c8;
     font-size: 13px;
     line-height: 1.25;
     text-align: center;
+    text-decoration: none;
 }
 
 .header-action:hover {
@@ -136,16 +155,75 @@ a:hover {
 
 .header-action-icon {
     display: block;
-    width: 32px;
-    height: 32px;
-    margin-bottom: 4px;
+
+    width: 28px;
+    height: 28px;
+    margin: 0;
+
     object-fit: contain;
 }
 
-/* Breadcrumb */
+.header-action-text {
+    color: #0076c8;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+/* Arabic button alignment */
+
+.header-actions .arabic-action {
+    position: relative;
+
+    width: 82px;
+    min-width: 82px;
+    height: 55px;
+
+    display: block;
+
+    direction: rtl;
+    text-align: center;
+}
+
+.header-actions .arabic-action .header-action-icon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 28px;
+    height: 28px;
+    margin: 0;
+
+    transform: translateX(-50%);
+    object-fit: contain;
+}
+
+.header-actions .arabic-action span {
+    position: absolute;
+    top: 34px;
+    left: 50%;
+
+    width: 82px;
+
+    transform: translateX(-50%);
+
+    color: #0076c8;
+    font-size: 13px;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+/* ===============================
+   Breadcrumb
+   =============================== */
 
 .breadcrumb-wrapper {
     height: 42px;
+
     background: #ffffff;
     border-bottom: 1px solid #d8d8d8;
 }
@@ -163,7 +241,10 @@ a:hover {
     font-size: 14px;
 }
 
-/* Main */
+
+/* ===============================
+   Main layout
+   =============================== */
 
 .main-container {
     width: 1235px;
@@ -190,12 +271,16 @@ a:hover {
 
 .certificate-section h1 {
     margin: 0;
+
     color: #303030;
     font-size: 26px;
     font-weight: 300;
 }
 
-/* Certificate */
+
+/* ===============================
+   Certificate card
+   =============================== */
 
 .certificate-card {
     width: 805px;
@@ -237,7 +322,10 @@ a:hover {
     font-size: 14px;
 }
 
-/* Tables */
+
+/* ===============================
+   Information tables
+   =============================== */
 
 .information-table {
     width: 761px;
@@ -262,17 +350,43 @@ a:hover {
     display: flex;
     align-items: center;
 }
+
+.information-label {
+    background: #eeeeee;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.information-value {
+    background: #f7f7f7;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.separated-row {
+    margin-top: 17px;
+}
+
+
+/* ===============================
+   Production month and year
+   =============================== */
+
 .production-date {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    align-items: center;
     justify-content: start;
+    align-items: center;
+
     column-gap: 7px;
     white-space: nowrap;
 }
 
 .production-date > span,
 .production-date > strong {
+    min-width: 0;
     margin: 0;
 }
 
@@ -283,23 +397,11 @@ a:hover {
 .production-date > strong {
     font-weight: 700;
 }
-.information-label {
-    background: #eeeeee;
-    font-size: 14px;
-    font-weight: 500;
-}
 
-.information-value {
-    background: #f7f7f7;
-    font-size: 14px;
-    font-weight: 700;
-}
 
-.separated-row {
-    margin-top: 17px;
-}
-
-/* Vehicle */
+/* ===============================
+   Vehicle title
+   =============================== */
 
 .vehicle-title {
     width: 761px;
@@ -320,14 +422,29 @@ a:hover {
 }
 
 .vehicle-name {
+    width: 100%;
     margin-top: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
     font-size: 19px;
+    line-height: 1.35;
+    text-align: center;
+
+    white-space: nowrap;
 }
 
-/* Sections */
+
+/* ===============================
+   Section headings
+   =============================== */
 
 .certificate-section h2 {
     margin: 35px 0 29px;
+
     font-size: 22px;
     font-weight: 400;
 }
@@ -338,6 +455,7 @@ a:hover {
     padding: 19px 16px;
 
     background: #f2f2f2;
+
     font-size: 14px;
     font-weight: 700;
 }
@@ -347,6 +465,7 @@ a:hover {
     padding: 11px;
 
     background: #f3f3f3;
+
     font-size: 14px;
     font-weight: 700;
 }
@@ -356,11 +475,15 @@ a:hover {
     padding: 17px 12px;
 
     background: #f6f6f6;
+
     font-size: 14px;
     line-height: 1.6;
 }
 
-/* Sidebar */
+
+/* ===============================
+   Sidebar
+   =============================== */
 
 .sidebar {
     width: 385px;
@@ -397,8 +520,10 @@ a:hover {
 
 .sidebar-icon img {
     display: block;
+
     width: 150px;
     height: 150px;
+
     object-fit: contain;
 
     transition: transform 0.25s ease;
@@ -406,6 +531,7 @@ a:hover {
 
 .sidebar-card h3 {
     margin: 11px 20px;
+
     font-size: 22px;
     font-weight: 400;
 }
@@ -425,11 +551,14 @@ a:hover {
 
 .sidebar-card > a {
     display: block;
+
     padding: 17px;
+
     border-top: 1px solid #d7d7d7;
 }
 
-/* Gold hover for regular cards */
+
+/* Regular sidebar hover */
 
 .sidebar-card:hover {
     background: linear-gradient(
@@ -441,6 +570,7 @@ a:hover {
 
     border-color: #d9bd62;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+
     transform: translateY(-4px);
 }
 
@@ -453,7 +583,8 @@ a:hover {
     transform: scale(1.08);
 }
 
-/* Blue hover only for fuel card */
+
+/* Fuel card hover */
 
 .fuel-card:hover {
     background: linear-gradient(
@@ -471,10 +602,14 @@ a:hover {
     color: #246f91;
 }
 
-/* Footer */
+
+/* ===============================
+   Footer
+   =============================== */
 
 .site-footer {
     min-height: 58px;
+
     background: #ffffff;
     border-top: 1px solid #dedede;
 }
@@ -496,14 +631,20 @@ a:hover {
     margin-right: 21px;
 }
 
-/* Hamburger */
+
+/* ===============================
+   Mobile menu default
+   =============================== */
 
 .mobile-menu-button,
 .mobile-menu-panel {
     display: none;
 }
 
-/* Tablet */
+
+/* ===============================
+   Tablet
+   =============================== */
 
 @media (max-width: 1000px) {
 
@@ -513,6 +654,7 @@ a:hover {
 
     .main-container {
         width: calc(100% - 30px);
+
         grid-template-columns: 1fr;
     }
 
@@ -540,11 +682,13 @@ a:hover {
     .sidebar {
         padding-top: 30px;
     }
+
 }
 
-/* Mobile */
 
-/* Mobile */
+/* ===============================
+   Mobile
+   =============================== */
 
 @media (max-width: 600px) {
 
@@ -554,6 +698,7 @@ a:hover {
 
     .site-header {
         position: relative;
+
         height: 96px;
     }
 
@@ -574,14 +719,17 @@ a:hover {
 
     .main-logo {
         position: static;
+
         width: 170px;
         height: 78px;
+
         justify-content: flex-start;
     }
 
     .main-logo img {
         width: 170px;
         height: 78px;
+
         object-position: left center;
     }
 
@@ -602,11 +750,13 @@ a:hover {
 
         background: transparent;
         border: 0;
+
         cursor: pointer;
     }
 
     .mobile-menu-button span {
         display: block;
+
         width: 38px;
         height: 3px;
 
@@ -633,6 +783,7 @@ a:hover {
     .mobile-menu-panel {
         position: relative;
         z-index: 200;
+
         width: 100%;
 
         display: none;
@@ -649,6 +800,7 @@ a:hover {
 
     .mobile-menu-panel a {
         padding: 15px 22px;
+
         border-bottom: 1px solid #eeeeee;
 
         color: #0076c8;
@@ -681,12 +833,14 @@ a:hover {
     .information-label,
     .information-value {
         padding: 12px 10px;
+
         font-size: 14px;
     }
 
     .production-date {
         grid-template-columns: auto auto auto auto;
         justify-content: start;
+
         column-gap: 5px;
 
         padding-left: 10px;
@@ -696,13 +850,20 @@ a:hover {
         white-space: nowrap;
     }
 
+    .production-date > span,
+    .production-date > strong {
+        min-width: 0;
+    }
+
     .certificate-section h1 {
         font-size: 25px;
     }
 
     .vehicle-title {
         width: 100%;
+        min-height: 109px;
         padding: 18px 10px;
+
         overflow: hidden;
     }
 
@@ -739,97 +900,5 @@ a:hover {
         align-items: flex-start;
         gap: 10px;
     }
-}
 
-
-/* Header action desktop alignment */
-
-.header-action {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-
-    min-width: 70px;
-
-    color: #0076c8;
-    text-decoration: none;
-}
-
-.header-action-icon {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-}
-
-.header-action-text {
-    color: #0076c8;
-    font-size: 13px;
-    font-weight: 400;
-    text-align: center;
-    line-height: 1.2;
-}
-
-
-/* Arabic button alignment */
-
-.header-actions .arabic-action {
-    position: relative !important;
-
-    width: 82px !important;
-    min-width: 82px !important;
-    height: 55px !important;
-
-    display: block !important;
-
-    direction: rtl;
-    text-align: center;
-}
-
-.header-actions .arabic-action .header-action-icon {
-    position: absolute !important;
-    top: 0 !important;
-    left: 50% !important;
-
-    width: 28px !important;
-    height: 28px !important;
-    margin: 0 !important;
-
-    transform: translateX(-50%) !important;
-    object-fit: contain;
-}
-
-.header-actions .arabic-action span {
-    position: absolute !important;
-    top: 34px !important;
-    left: 50% !important;
-
-    width: 82px !important;
-
-    transform: translateX(-50%) !important;
-
-    color: #0076c8 !important;
-    font-size: 13px !important;
-    line-height: 1.2 !important;
-    text-align: center !important;
-    white-space: nowrap;
-}
-
-
-/* Vehicle name desktop */
-
-.vehicle-name {
-    width: 100%;
-    margin-top: 8px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-
-    font-size: 19px;
-    line-height: 1.35;
-    text-align: center;
-    white-space: nowrap;
 }
