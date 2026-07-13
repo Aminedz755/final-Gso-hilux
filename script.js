@@ -1,415 +1,764 @@
-"use strict";
-
-
-// ===============================
-// Vehicle Database
-// ===============================
-
-const vehicles = [
-
-    {
-        route: "/toyota",
-
-        data: {
-            ccrNumber: "509192",
-            approvedDate: "01 January 2026",
-
-            manufacturer: "Toyota Motor Corporation",
-
-            vehicleName: "TOYOTA HILUX",
-            vehicleDescription: "(GUN122) 2.4L Pick-up RWD 4 Doors",
-
-            category: "Truck",
-            modelYear: "2026",
-            country: "THAILAND",
-
-            productionMonth: " 1",
-            productionYear: " 2026",
-
-            vin: "MR0CB9CD7S3310269",
-
-            maxWeight: "2810 kg",
-            curbWeight: "1800 kg",
-
-            frontAxle: "1200 kg",
-            rearAxle: "1750 kg",
-
-            length: "5330 mm",
-            width: "1800 mm",
-            height: "1700 mm",
-
-            wheelbase: "3085 mm",
-
-            frontTrack: "1510 mm",
-            rearTrack: "1510 mm",
-
-            bodyType: "Chassis Frame",
-
-            passengers: "5 (including the driver)",
-
-            engineType: "Diesel",
-
-            cylinders: "4",
-
-            displacement: "2393 cc",
-
-            airIntake: "Turbo",
-
-            enginePower: "110 kW at 3400 rpm",
-
-            pollutantLimit: "Comply with Euro5",
-
-            transmission: "Manual",
-
-            ecall: "Not Provided",
-
-            serviceBrakes: "Hydraulic",
-
-            emergencyBrakes:
-                "Combined with the service brake",
-
-            vehicleClass: "Light Truck",
-
-            fuelEconomy: "15.9 km/L",
-
-            fuelRating: "Excellent",
-
-            additionalInformation:
-                "Also comply with the National regulations for member countries mentioned in the Annex of the list of Technical Regulations for MV 202MY-D3, when exporting to those countries. The seating reference point of the lowest seat exceeds 700mm from the ground. This vehicle type complies with ECE13. This vehicle is only for Saudi Arabia, Kuwait and Qatar market."
-        }
-    },
-
-
-    {
-        route: "/kia",
-
-        data: {
-            ccrNumber: "782341",
-            approvedDate: "15 February 2026",
-
-            manufacturer: "KIA Corporation",
-
-            vehicleName: "KIA SPORTAGE",
-            vehicleDescription: "(NQ5) 2.0L SUV AWD 5 Doors",
-
-            category: "SUV",
-            modelYear: "2026",
-            country: "SOUTH KOREA",
-
-            productionMonth: "3",
-            productionYear: "2026",
-
-            vin: "KNAPM81A6T7001234",
-
-            maxWeight: "2200 kg",
-            curbWeight: "1650 kg",
-
-            frontAxle: "1100 kg",
-            rearAxle: "1200 kg",
-
-            length: "4660 mm",
-            width: "1865 mm",
-            height: "1660 mm",
-
-            wheelbase: "2755 mm",
-
-            frontTrack: "1615 mm",
-            rearTrack: "1622 mm",
-
-            bodyType: "Monocoque Body",
-
-            passengers: "5 (including driver)",
-
-            engineType: "Petrol",
-
-            cylinders: "4",
-
-            displacement: "1999 cc",
-
-            airIntake: "Natural",
-
-            enginePower: "115 kW at 6200 rpm",
-
-            pollutantLimit: "Comply with Euro6",
-
-            transmission: "Automatic",
-
-            ecall: "Provided",
-
-            serviceBrakes: "Hydraulic Disc",
-
-            emergencyBrakes:
-                "Electronic Parking Brake",
-
-            vehicleClass: "Passenger Vehicle",
-
-            fuelEconomy: "14.5 km/L",
-
-            fuelRating: "Very Good",
-
-            additionalInformation:
-                "This vehicle complies with applicable Gulf technical regulations and safety standards."
-        }
-    }
-
-];
-
-
-// ===============================
-// Read and Normalize Hash Route
-// ===============================
-
-function getCurrentRoute() {
-
-    let route = window.location.hash;
-
-    // Remove "#"
-    route = route.replace(/^#/, "");
-
-    // Remove spaces
-    route = route.trim();
-
-    // Use Toyota when the URL has no hash
-    if (!route) {
-        return "/toyota";
-    }
-
-    // Support both #toyota and #/toyota
-    if (!route.startsWith("/")) {
-        route = "/" + route;
-    }
-
-    // Remove trailing slashes
-    route = route.replace(/\/+$/, "");
-
-    return route.toLowerCase();
-
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #f3f6fa;
+    color: #262626;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    zoom: 0.9;
+}
+
+a {
+    color: #0076c8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 
-// ===============================
-// Find Vehicle
-// ===============================
+/* Header */
 
-function findVehicleByRoute(route) {
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    height: 90px;
 
-    return vehicles.find(function (vehicle) {
+    background: #ffffff;
+    border-bottom: 1px solid #c8c8c8;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
 
-        return vehicle.route.toLowerCase() === route;
+.header-container {
+    width: 1200px;
+    max-width: calc(100% - 40px);
+    height: 89px;
+    margin: 0 auto;
 
-    });
-
+    display: grid;
+    grid-template-columns: 250px 1fr auto;
+    align-items: center;
 }
 
 
-// ===============================
-// Clear Existing Vehicle Values
-// ===============================
+/* Logo */
 
-function clearVehicleData() {
+.brand {
+    display: flex;
+    align-items: center;
+}
 
-    const vehicleKeys = Object.keys(vehicles[0].data);
+.brand:hover {
+    text-decoration: none;
+}
 
-    vehicleKeys.forEach(function (key) {
+.main-logo {
+    position: relative;
+    left: 30px;
+    top: -12px;
 
-        const element = document.getElementById(key);
+    width: 50px;
+    height: 30px;
 
-        if (element) {
-            element.textContent = "";
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    });
+    overflow: visible;
+}
 
+.main-logo img {
+    display: block;
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
 }
 
 
-// ===============================
-// Insert Vehicle Data Into HTML
-// ===============================
+/* Navigation */
 
-function loadVehicleData(vehicle) {
+.main-navigation {
+    position: relative;
+    left: -85px;
+    top: -10px;
 
-    clearVehicleData();
+    height: 89px;
 
-    const data = vehicle.data;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 28px;
 
-    Object.keys(data).forEach(function (key) {
+    white-space: nowrap;
+}
 
-        const element = document.getElementById(key);
-
-        if (!element) {
-
-            console.warn(
-                "Missing HTML element with id:",
-                key
-            );
-
-            return;
-
-        }
-
-        element.textContent = data[key];
-
-    });
-
-    document.title =
-        data.vehicleName + " - Vehicle Conformity";
-
+.main-navigation a {
+    color: #0076c8;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 
-// ===============================
-// Display Vehicle Not Found
-// ===============================
+/* Header actions */
 
-function showVehicleNotFound(route) {
+.header-actions {
+    position: relative;
+    left: 25px;
+    top: -12px;
 
-    clearVehicleData();
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 22px;
+}
 
-    document.title = "Vehicle Not Found";
+.header-action {
+    min-width: 70px;
 
-    const vehicleName =
-        document.getElementById("vehicleName");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
 
-    const vehicleDescription =
-        document.getElementById("vehicleDescription");
+    color: #0076c8;
+    font-size: 13px;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+}
 
-    if (vehicleName) {
-        vehicleName.textContent = "VEHICLE NOT FOUND";
-    }
+.header-action:hover {
+    text-decoration: none;
+}
 
-    if (vehicleDescription) {
-        vehicleDescription.textContent =
-            "No vehicle is configured for route " + route;
-    }
-
+.header-action-icon {
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    object-fit: contain;
 }
 
 
-// ===============================
-// Render Current Route
-// ===============================
+/* Arabic button alignment */
 
-function renderVehicle() {
+.header-actions .arabic-action {
+    position: relative;
 
-    const currentRoute = getCurrentRoute();
+    width: 82px;
+    min-width: 82px;
+    height: 55px;
 
-    const vehicle =
-        findVehicleByRoute(currentRoute);
+    display: block;
 
-    console.log("script.js loaded successfully");
-    console.log("Current hash:", window.location.hash);
-    console.log("Current route:", currentRoute);
+    direction: rtl;
+    text-align: center;
+}
 
-    if (!vehicle) {
+.header-actions .arabic-action .header-action-icon {
+    position: absolute;
+    top: 0;
+    left: 50%;
 
-        console.error(
-            "No vehicle found for route:",
-            currentRoute
-        );
+    width: 28px;
+    height: 28px;
+    margin: 0;
 
-        showVehicleNotFound(currentRoute);
+    transform: translateX(-50%);
+    object-fit: contain;
+}
 
-        return;
+.header-actions .arabic-action span {
+    position: absolute;
+    top: 34px;
+    left: 50%;
 
-    }
+    width: 82px;
 
-    console.log(
-        "Vehicle loaded:",
-        vehicle.data.vehicleName
+    transform: translateX(-50%);
+
+    color: #0076c8;
+    font-size: 13px;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+/* Breadcrumb */
+
+.breadcrumb-wrapper {
+    height: 42px;
+    background: #ffffff;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.breadcrumb {
+    width: 1235px;
+    max-width: calc(100% - 40px);
+    height: 42px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 14px;
+}
+
+
+/* Main */
+
+.main-container {
+    width: 1235px;
+    max-width: calc(100% - 40px);
+    margin: 31px auto 80px;
+
+    display: grid;
+    grid-template-columns: 805px 385px;
+    column-gap: 32px;
+    align-items: start;
+}
+
+.certificate-section {
+    width: 805px;
+}
+
+.page-title-line {
+    min-height: 32px;
+    margin-bottom: 27px;
+
+    display: flex;
+    align-items: center;
+}
+
+.certificate-section h1 {
+    margin: 0;
+    color: #303030;
+    font-size: 26px;
+    font-weight: 300;
+}
+
+
+/* Certificate */
+
+.certificate-card {
+    width: 805px;
+    padding: 25px 21px 22px;
+
+    background: #ffffff;
+    border: 1px solid #c8cdd3;
+    border-radius: 6px;
+}
+
+.approval-message {
+    width: 761px;
+    min-height: 43px;
+    margin-bottom: 17px;
+    padding: 11px 12px;
+
+    display: flex;
+    align-items: center;
+
+    background: #d8f1df;
+    border: 1px solid #bce2c5;
+    border-radius: 4px;
+
+    color: #08752c;
+    font-size: 14px;
+}
+
+
+/* Tables */
+
+.information-table {
+    width: 761px;
+    margin-bottom: 17px;
+}
+
+.information-row {
+    width: 761px;
+    min-height: 46px;
+
+    display: grid;
+    grid-template-columns: 177px 584px;
+
+    border-bottom: 1px solid #ffffff;
+}
+
+.information-label,
+.information-value {
+    min-height: 46px;
+    padding: 10px 11px;
+
+    display: flex;
+    align-items: center;
+}
+
+.information-label {
+    background: #eeeeee;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.information-value {
+    background: #f7f7f7;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* Production month and year */
+
+.production-date {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    flex-wrap: wrap;
+}
+
+.production-date-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.production-date-group span {
+    font-weight: 400;
+}
+
+.production-date-group strong {
+    font-weight: 700;
+}
+
+.separated-row {
+    margin-top: 17px;
+}
+
+
+/* Vehicle */
+
+.vehicle-title {
+    width: 761px;
+    min-height: 109px;
+    margin: 17px 0;
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: #e7e7e7;
+    text-align: center;
+}
+
+.vehicle-heading {
+    font-size: 21px;
+}
+
+.vehicle-name {
+    margin-top: 8px;
+    font-size: 19px;
+}
+
+
+/* Sections */
+
+.certificate-section h2 {
+    margin: 35px 0 29px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.section-heading {
+    width: 761px;
+    margin-top: 17px;
+    padding: 19px 16px;
+
+    background: #f2f2f2;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.subheading {
+    width: 761px;
+    padding: 11px;
+
+    background: #f3f3f3;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.additional-information {
+    width: 761px;
+    padding: 17px 12px;
+
+    background: #f6f6f6;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    width: 385px;
+    padding-top: 57px;
+}
+
+.sidebar-card {
+    width: 385px;
+    margin-bottom: 27px;
+    overflow: hidden;
+
+    background: #ffffff;
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.sidebar-icon {
+    height: 170px;
+    padding-bottom: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.sidebar-icon img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+
+    transition: transform 0.25s ease;
+}
+
+.sidebar-card h3 {
+    margin: 11px 20px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.sidebar-card p {
+    min-height: 109px;
+    margin: 0;
+    padding: 4px 27px 21px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.sidebar-card > a {
+    display: block;
+    padding: 17px;
+    border-top: 1px solid #d7d7d7;
+}
+
+
+/* Sidebar hover */
+
+.sidebar-card:hover {
+    background: linear-gradient(
+        to bottom,
+        #fff6d6 0%,
+        #fffdf3 55%,
+        #ffffff 100%
     );
 
-    loadVehicleData(vehicle);
-
+    border-color: #d9bd62;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    transform: translateY(-4px);
 }
 
+.sidebar-card:hover h3,
+.sidebar-card:hover p {
+    color: #8a6500;
+}
 
-// ===============================
-// Mobile Menu
-// ===============================
+.sidebar-card:hover .sidebar-icon img {
+    transform: scale(1.08);
+}
 
-function setupMobileMenu() {
-
-    const menuButton =
-        document.querySelector(".mobile-menu-button");
-
-    const mobileMenu =
-        document.getElementById("mobileMenu");
-
-    if (!menuButton || !mobileMenu) {
-        return;
-    }
-
-    menuButton.addEventListener(
-        "click",
-        function () {
-
-            const isOpen =
-                mobileMenu.classList.toggle("open");
-
-            menuButton.classList.toggle(
-                "open",
-                isOpen
-            );
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
-
-        }
+.fuel-card:hover {
+    background: linear-gradient(
+        to bottom,
+        #dff7ff 0%,
+        #eefbff 55%,
+        #ffffff 100%
     );
 
-    const mobileLinks =
-        mobileMenu.querySelectorAll("a");
+    border-color: #8ec9df;
+}
 
-    mobileLinks.forEach(function (link) {
-
-        link.addEventListener(
-            "click",
-            function () {
-
-                mobileMenu.classList.remove("open");
-
-                menuButton.classList.remove("open");
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
-        );
-
-    });
-
+.fuel-card:hover h3,
+.fuel-card:hover p {
+    color: #246f91;
 }
 
 
-// ===============================
-// Start Website
-// ===============================
+/* Footer */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+.site-footer {
+    min-height: 58px;
+    background: #ffffff;
+    border-top: 1px solid #dedede;
+}
 
-        setupMobileMenu();
-        renderVehicle();
+.footer-container {
+    width: 1235px;
+    max-width: calc(100% - 40px);
+    min-height: 58px;
+    margin: 0 auto;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 14px;
+}
+
+.footer-links a {
+    margin-right: 21px;
+}
+
+
+/* Hamburger */
+
+.mobile-menu-button,
+.mobile-menu-panel {
+    display: none;
+}
+
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+
+    body {
+        zoom: 1;
     }
-);
 
-
-// ===============================
-// Update When Hash Changes
-// ===============================
-
-window.addEventListener(
-    "hashchange",
-    function () {
-
-        renderVehicle();
-
+    .main-container {
+        width: calc(100% - 30px);
+        grid-template-columns: 1fr;
     }
-);
+
+    .certificate-section,
+    .certificate-card,
+    .approval-message,
+    .information-table,
+    .information-row,
+    .vehicle-title,
+    .section-heading,
+    .subheading,
+    .additional-information {
+        width: 100%;
+    }
+
+    .information-row {
+        grid-template-columns: 177px 1fr;
+    }
+
+    .sidebar,
+    .sidebar-card {
+        width: 100%;
+    }
+
+    .sidebar {
+        padding-top: 30px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    body {
+        zoom: 1;
+    }
+
+    .site-header {
+        position: relative;
+        height: 96px;
+    }
+
+    .header-container {
+        width: 100%;
+        max-width: none;
+        height: 95px;
+        padding: 0 18px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .brand {
+        height: 95px;
+    }
+
+    .main-logo {
+        position: static;
+        width: 170px;
+        height: 78px;
+        justify-content: flex-start;
+    }
+
+    .main-logo img {
+        width: 170px;
+        height: 78px;
+        object-position: left center;
+    }
+
+    .main-navigation,
+    .header-actions {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        width: 48px;
+        height: 48px;
+        padding: 7px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 7px;
+
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .mobile-menu-button span {
+        display: block;
+        width: 38px;
+        height: 3px;
+
+        background: #0076c8;
+        border-radius: 2px;
+
+        transition:
+            transform 0.25s ease,
+            opacity 0.25s ease;
+    }
+
+    .mobile-menu-button.open span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .mobile-menu-button.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-button.open span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    .mobile-menu-panel {
+        position: relative;
+        z-index: 200;
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+
+        background: #ffffff;
+        border-bottom: 1px solid #d0d0d0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    .mobile-menu-panel.open {
+        display: flex;
+    }
+
+    .mobile-menu-panel a {
+        padding: 15px 22px;
+        border-bottom: 1px solid #eeeeee;
+
+        color: #0076c8;
+        font-size: 16px;
+    }
+
+    .breadcrumb {
+        width: 100%;
+        max-width: none;
+        padding: 0 20px;
+    }
+
+    .main-container {
+        width: 100%;
+        max-width: none;
+        margin: 27px 0 60px;
+        padding: 0 20px;
+
+        display: block;
+    }
+
+    .certificate-card {
+        padding: 20px 15px;
+    }
+
+    .information-row {
+        grid-template-columns: 48% 52%;
+    }
+
+    .information-label,
+    .information-value {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .production-date {
+        gap: 15px;
+    }
+
+    .production-date-group {
+        gap: 6px;
+    }
+
+    .certificate-section h1 {
+        font-size: 25px;
+    }
+
+    .vehicle-name {
+        font-size: 18px;
+    }
+
+    .footer-container {
+        width: calc(100% - 40px);
+        padding: 14px 0;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+}
