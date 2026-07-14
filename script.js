@@ -211,6 +211,74 @@ const vehicles = [
                 "Also comply with the National regulations for member countries mentioned in the Annex of the list of Technical Regulations for MV 2025MY-D3, when exporting to those countries. The seating reference point of the lowest seat exceeds 700mm from the ground. This vehicle type complies with ECE13. This vehicle is only for Saudi Arabia, Kuwait and Qatar market."
         }
     },
+    {
+    route: "/509225",
+
+    data: {
+        ccrNumber: "509225",
+        approvedDate: "20 December 2025",
+
+        manufacturer: "ISUZU MOTORS LIMITED",
+
+        vehicleName: "ISUZU D-MAX",
+        vehicleDescription: "Crew Cab 3.0L Turbo Diesel 4×4 Automatic 4 Doors",
+
+        category: "Truck",
+        modelYear: "2026",
+        country: "THAILAND",
+
+        productionMonth: "12",
+        productionYear: "2025",
+
+        vin: "MPATFS40*T*******",
+
+        maxWeight: "2830 kg",
+        curbWeight: "2044 kg",
+
+        frontAxle: "1450 kg",
+        rearAxle: "1910 kg",
+
+        length: "5280 mm",
+        width: "1870 mm",
+        height: "1790 mm",
+
+        wheelbase: "3125 mm",
+
+        frontTrack: "1570 mm",
+        rearTrack: "1570 mm",
+
+        bodyType: "Ladder Frame",
+
+        passengers: "5 (including the driver)",
+
+        engineType: "Diesel",
+        cylinders: "4",
+        displacement: "2999 cc",
+        airIntake: "Turbo",
+
+        enginePower: "140 kW at 3600 rpm",
+
+        pollutantLimit: "Comply with Euro 4 (GCC Specification)",
+
+        transmission: "Automatic",
+
+        ecall: "Not Provided",
+
+        serviceBrakes: "Hydraulic",
+
+        emergencyBrakes:
+            "Combined with the service brake",
+
+        vehicleClass: "Light Truck",
+
+        fuelEconomy: "12.5 km/L",
+
+        fuelRating: "Very Good",
+
+        additionalInformation:
+            "Also comply with the National regulations for member countries mentioned in the Annex of the list of Technical Regulations for MV 2026MY-D3, when exporting to those countries. The seating reference point of the lowest seat exceeds 700mm from the ground. This vehicle type complies with ECE13. This vehicle is only for Saudi Arabia, Kuwait and Qatar market."
+    }
+},
 
 
     {
