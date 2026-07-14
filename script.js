@@ -148,7 +148,7 @@ const vehicles = [
 
         data: {
             ccrNumber: "509145",
-            approvedDate: "27 June 2025",
+            approvedDate: "27 August 2025",
 
             manufacturer: "Toyota Motor Corporation",
 
