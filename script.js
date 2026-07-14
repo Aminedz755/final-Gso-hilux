@@ -19,7 +19,7 @@ const vehicles = [
             vehicleName: "TOYOTA HILUX",
             vehicleDescription: "(GUN122) 2.4L Pick-up RWD 4 Doors",
 
-            category: "Truck",
+            category: "Light Truck",
             modelYear: "2026",
             country: "THAILAND",
 
@@ -87,7 +87,7 @@ const vehicles = [
             vehicleName: "TOYOTA HILUX",
             vehicleDescription: "(GUN122) 2.4L Pick-up RWD 4 Doors",
 
-            category: "Truck",
+            category: "Light Truck",
             modelYear: "2026",
             country: "THAILAND",
 
@@ -155,7 +155,7 @@ const vehicles = [
             vehicleName: "TOYOTA HILUX",
             vehicleDescription: "(GUN122) 2.4L Pick-up RWD 4 Doors",
 
-            category: "Truck",
+            category: "Light Truck",
             modelYear: "2025",
             country: "THAILAND",
 
@@ -223,7 +223,7 @@ const vehicles = [
         vehicleName: "ISUZU D-MAX",
         vehicleDescription: "Crew Cab 3.0L Turbo Diesel 4×4 Automatic 4 Doors",
 
-        category: "Truck",
+        category: "Light Truck",
         modelYear: "2026",
         country: "THAILAND",
 
