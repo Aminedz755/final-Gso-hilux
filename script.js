@@ -56,7 +56,7 @@ const vehicles = [
 
             pollutantLimit: "Comply with Euro5",
 
-            transmission: "Manual",
+            transmission: "Automatic",
 
             ecall: "Not Provided",
 
@@ -124,7 +124,7 @@ const vehicles = [
 
             pollutantLimit: "Comply with Euro5",
 
-            transmission: "Manual",
+            transmission: "Automatic",
 
             ecall: "Not Provided",
 
@@ -192,7 +192,7 @@ const vehicles = [
 
             pollutantLimit: "Comply with Euro5",
 
-            transmission: "Manual",
+            transmission: "Automatic",
 
             ecall: "Not Provided",
 
