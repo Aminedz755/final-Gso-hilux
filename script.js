@@ -148,7 +148,7 @@ const vehicles = [
 
         data: {
             ccrNumber: "509145",
-            approvedDate: "27 August 2025",
+            approvedDate: "27 June 2025",
 
             manufacturer: "Toyota Motor Corporation",
 
@@ -159,7 +159,7 @@ const vehicles = [
             modelYear: "2025",
             country: "THAILAND",
 
-            productionMonth: "6",
+            productionMonth: "8",
             productionYear: "2025",
 
             vin: "MR0BB8CD9S6504502",
