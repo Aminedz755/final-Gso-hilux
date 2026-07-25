@@ -348,6 +348,74 @@ const vehicles = [
             additionalInformation:
                 "This vehicle complies with applicable Gulf technical regulations and safety standards."
         }
+    },
+     {
+        route: "/508921",
+
+        data: {
+            ccrNumber: "508921",
+            approvedDate: "25 JULY 2025",
+
+            manufacturer: "Toyota Motor Corporation",
+
+            vehicleName: "TOYOTA HILUX",
+            vehicleDescription: "(GUN122) 2.4L Pick-up 4WD 4 Doors",
+
+            category: "Truck",
+            modelYear: "2025",
+            country: "THAILAND",
+
+            productionMonth: "7",
+            productionYear: "2025",
+
+            vin: "MR0CB9CD*S*******",
+
+            maxWeight: "2810 kg",
+            curbWeight: "1800 kg",
+
+            frontAxle: "1200 kg",
+            rearAxle: "1750 kg",
+
+            length: "5330 mm",
+            width: "1800 mm",
+            height: "1700 mm",
+
+            wheelbase: "3085 mm",
+
+            frontTrack: "1510 mm",
+            rearTrack: "1510 mm",
+
+            bodyType: "Chassis Frame",
+
+            passengers: "5 (including the driver)",
+
+            engineType: "Diesel",
+            cylinders: "4",
+            displacement: "2393 cc",
+            airIntake: "Turbo",
+
+            enginePower: "110 kW at 3400 rpm",
+
+            pollutantLimit: "Comply with Euro5",
+
+            transmission: "Automatic",
+
+            ecall: "Not Provided",
+
+            serviceBrakes: "Hydraulic",
+
+            emergencyBrakes:
+                "Combined with the service brake",
+
+            vehicleClass: "Light Truck",
+
+            fuelEconomy: "15.9 km/L",
+
+            fuelRating: "Excellent",
+
+            additionalInformation:
+                "Also comply with the National regulations for member countries mentioned in the Annex of the list of Technical Regulations for MV 2025MY-D3, when exporting to those countries. The seating reference point of the lowest seat exceeds 700mm from the ground. This vehicle type complies with ECE13. This vehicle is only for Saudi Arabia, Kuwait and Qatar market."
+        }
     }
 
 ];
