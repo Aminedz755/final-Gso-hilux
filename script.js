@@ -17,7 +17,7 @@ const vehicles = [
             manufacturer: "Toyota Motor Corporation",
 
             vehicleName: "TOYOTA HILUX",
-            vehicleDescription: "(GUN122) 2.4L Pick-up RWD 4Doors",
+            vehicleDescription: "(GUN122) 2.4L Pick-up 4WD 4 Doors",
 
             category: "Light Truck",
             modelYear: "2026",
@@ -359,7 +359,7 @@ const vehicles = [
             manufacturer: "Toyota Motor Corporation",
 
             vehicleName: "TOYOTA HILUX",
-            vehicleDescription: "(GUN122) 2.4L Pick-up 4WD 4 Doors",
+            vehicleDescription: "(GUN122) 2.4L Pick-up RWD 4Doors",
 
             category: "Truck",
             modelYear: "2025",
