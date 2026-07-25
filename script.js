@@ -387,7 +387,7 @@ const vehicles = [
 
             bodyType: "Chassis Frame",
 
-            passengers: "5 (including the driver)",
+            passengers: "5 (Including the driver)",
 
             engineType: "Diesel",
             cylinders: "4",
@@ -398,7 +398,7 @@ const vehicles = [
 
             pollutantLimit: "Comply with Euro5",
 
-            transmission: "Automatic",
+            transmission: "Manual",
 
             ecall: "Not Provided",
 
