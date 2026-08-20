@@ -7,10 +7,10 @@
 
 const vehicles = [
      {
-        route: "/5091890",
+        route: "/509189",
 
         data: {
-            ccrNumber: "5091890",
+            ccrNumber: "509189",
             approvedDate: "27 November 2025",
 
             manufacturer: "Toyota Motor Corporation",
