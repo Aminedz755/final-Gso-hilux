@@ -71,7 +71,7 @@ const vehicles = [
             fuelRating: "Excellent",
 
             additionalInformation:
-                "Also comply with the National regulations for member countries mentioned in the Annex of the list of Technical Regulations for MV 2026MY-D3, when exporting to those countries. The seating reference point of the lowest seat exceeds 700mm from the ground. This vehicle type complies with ECE13. This vehicle is only for Saudi Arabia, Kuwait and Qatar market."
+                "Also comply with the National regulations for member countries mentioned in the Annex of the list of Technical Regulations for MV 2025MY-D3, when exporting to those countries. The seating reference point of the lowest seat exceeds 700mm from the ground. This vehicle type complies with ECE13. This vehicle is only for Saudi Arabia, Kuwait and Qatar market."
         }
     },
 
