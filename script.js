@@ -7,6 +7,74 @@
 
 const vehicles = [
      {
+        route: "/493306",
+
+        data: {
+            ccrNumber: "493306",
+            approvedDate: "23 FEB 2024",
+
+            manufacturer: "SUZUKI MOTOR CORPORATION",
+
+            vehicleName: "SUZUKI FRONX",
+            vehicleDescription: "GCC AT 1.5L Hatchback FWD 5Doors",
+
+            category: "Passenger Car",
+            modelYear: "2025",
+            country: "INDIA",
+
+            productionMonth: "4",
+            productionYear: "2024",
+
+            vin: "MBHKWDA3*S*******",
+
+            maxWeight: "1480 kg",
+            curbWeight: "1060 kg",
+
+            frontAxle: "825 kg",
+            rearAxle: "780 kg",
+
+            length: "3995 mm",
+            width: "1765 mm",
+            height: "1550 mm",
+
+            wheelbase: "2520 mm",
+
+            frontTrack: "1520 mm",
+            rearTrack: "1530 mm",
+
+            bodyType: "Monocoque",
+
+            passengers: "5 (including the driver)",
+
+            engineType: "Gasoline",
+            cylinders: "4",
+            displacement: "1462 cc",
+            airIntake: "Regular",
+
+            enginePower: "76 kW at 6000 rpm",
+
+            pollutantLimit: "Comply with Euro5",
+
+            transmission: "Automatic",
+
+            ecall: "Provided",
+
+            serviceBrakes: "Hydraulic",
+
+            emergencyBrakes:
+                "Combined with the service brake",
+
+            vehicleClass: "Passenger Car",
+
+            fuelEconomy: "21.1 km/L",
+
+            fuelRating: "Excellent",
+
+            additionalInformation:
+                "Also comply with the National regulations for member countries mentioned in the Annex of the list of Technical Regulations for MV 2025 MY-D3, when exporting to those countries.The eCall system is only equipped with vehicles for UAE.This Type is equipped with Front-side airbag and curtain airbag."
+        }
+    },
+     {
         route: "/509189",
 
         data: {
