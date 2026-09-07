@@ -6,6 +6,74 @@
 // ===============================
 
 const vehicles = [
+      {
+        route: "/561091",
+
+        data: {
+            ccrNumber: "	561091",
+            approvedDate: "16 JAN 2026",
+
+            manufacturer: "Toyota Motor Corporation",
+
+            vehicleName: "TOYOTA HILUX",
+            vehicleDescription: "(GUN122) 2.4L Pick-up RWD 4Doors",
+
+            category: "Truck",
+            modelYear: "2026",
+            country: "THAILAND",
+
+            productionMonth: "1",
+            productionYear: "2026",
+
+            vin: "MR0JB8CD*T*******",
+
+            maxWeight: "2810 kg",
+            curbWeight: "1815 kg",
+
+            frontAxle: "1200 kg",
+            rearAxle: "1750 kg",
+
+            length: "5330 mm",
+            width: "1800 mm",
+            height: "1700 mm",
+
+            wheelbase: "3085 mm",
+
+            frontTrack: "1510 mm",
+            rearTrack: "1510 mm",
+
+            bodyType: "Chassis Frame",
+
+            passengers: "5 (Including the Driver)",
+
+            engineType: "Diesel",
+            cylinders: "4",
+            displacement: "2393 cc",
+            airIntake: "Turbo",
+
+            enginePower: "110 kW at 3400 rpm",
+
+            pollutantLimit: "Comply with Euro4",
+
+            transmission: "Manual",
+
+            ecall: "Not Provided",
+
+            serviceBrakes: "Hydraulic",
+
+            emergencyBrakes:
+                "Combined with the service brake",
+
+            vehicleClass: "Light Truck",
+
+            fuelEconomy: "16.3 km/L",
+
+            fuelRating: "Excellent",
+
+            additionalInformation:
+                "Also comply with the National regulations for member countries mentioned in the Annex of the list of Technical Regulations for MV 2026MY-D5, when exporting to those countries. The seating reference point of the lowest seat exceeds 700mm from the ground.Length / Width / Height shown above are(is) longest / widest / highest one(s) and different in each optional feature. This vehicle type complies with ECE13.This certificate is not valid for Saudi Arabia market.For UAE, LED head lamp (UN-ECE149) available."
+        }
+    },
      {
         route: "/493306",
 
