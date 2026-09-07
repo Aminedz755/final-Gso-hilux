@@ -6,11 +6,79 @@
 // ===============================
 
 const vehicles = [
+       {
+        route: "/540640",
+
+        data: {
+            ccrNumber: "540640",
+            approvedDate: "12 FEB 2026",
+
+            manufacturer: "SUZUKI MOTOR CORPORATION",
+
+            vehicleName: "SUZUKI Jimny",
+            vehicleDescription: "GCC AT 1.5L SUV 4WD 5Doors",
+
+            category: "Multipurpose Vehicle",
+            modelYear: "2026",
+            country: "INDIA",
+
+            productionMonth: "2",
+            productionYear: "2026",
+
+            vin: "MA3JC7D2*T*******",
+
+            maxWeight: "1545 kg",
+            curbWeight: "1205 kg",
+
+            frontAxle: "765 kg",
+            rearAxle: "880 kg",
+
+            length: "3985 mm",
+            width: "1645 mm",
+            height: "1720 mm",
+
+            wheelbase: "2590 mm",
+
+            frontTrack: "1395 mm",
+            rearTrack: "1405 mm",
+
+            bodyType: "Chassis Frame",
+
+            passengers: "4 (Including the Driver)",
+
+            engineType: "Gasoline",
+            cylinders: "4",
+            displacement: "1462 cc",
+            airIntake: "Regular",
+
+            enginePower: "75 kW at 6000 rpm",
+
+            pollutantLimit: "Comply with Euro5",
+
+            transmission: "Automatic",
+
+            ecall: "Not Provided",
+
+            serviceBrakes: "Hydraulic",
+
+            emergencyBrakes:
+                "Combined with the service brake",
+
+            vehicleClass: "Light Truck",
+
+            fuelEconomy: "15.7 km/L",
+
+            fuelRating: "Excellent",
+
+            additionalInformation:
+                "Also comply with the National regulations for member countries mentioned in the Annex of the list of Technical Regulations for MV 2026 MY-D5, when exporting to those countries."
+        }
+    },
       {
         route: "/561091",
 
         data: {
-            ccrNumber: "	561091",
+            ccrNumber: "561091",
             approvedDate: "16 JAN 2026",
 
             manufacturer: "Toyota Motor Corporation",
