@@ -6,6 +6,74 @@
 // ===============================
 
 const vehicles = [
+              {
+        route: "/551821",
+
+        data: {
+            ccrNumber: "551821",
+            approvedDate: "25 APR 2025",
+
+            manufacturer: "Nissan Motor Co. Ltd",
+
+            vehicleName: "NISSAN Navara",
+            vehicleDescription: "2.5L Diesel XE 4x2 MT SC Pick-up",
+
+            category: "Truck",
+            modelYear: "2025",
+            country: "South Africa",
+
+            productionMonth: "3",
+            productionYear: "2025",
+
+            vin: "ADNCAND2*Z***",
+
+            maxWeight: "2950 kg",
+            curbWeight: "1182 kg",
+
+            frontAxle: "885 kg",
+            rearAxle: "1200 kg",
+
+            length: "5240 mm",
+            width: "1850 mm",
+            height: "1815 mm",
+
+            wheelbase: "3150 mm",
+
+            frontTrack: "1570 mm",
+            rearTrack: "1570 mm",
+
+            bodyType: "Chassis Frame",
+
+            passengers: "5 (Including the Driver)",
+
+            engineType: "Gasoline",
+            cylinders: "4",
+            displacement: "2488 cc",
+            airIntake: "Regular",
+
+            enginePower: "125 kW at 6000 rpm",
+
+            pollutantLimit: "Comply with Euro4",
+
+            transmission: "Automatic",
+
+            ecall: "Not Provided",
+
+            serviceBrakes: "Hydraulic",
+
+            emergencyBrakes:
+                "Combined with the service brake",
+
+            vehicleClass: "Light Truck",
+
+            fuelEconomy: "11.2 km/L",
+
+            fuelRating: "Good",
+
+            additionalInformation:
+                "Any other information or local standards to be compiled: Also comply with the National regulations for member countries mentioned in the Annex of the list of Technical Regulations for MV 2025 MY-D5."
+        }
+    },
        {
         route: "/540640",
 
