@@ -11,29 +11,29 @@ const vehicles = [
 
         data: {
             ccrNumber: "551821",
-            approvedDate: "25 APR 2025",
+            approvedDate: "26 MAI 2025",
 
             manufacturer: "Nissan Motor Co. Ltd",
 
             vehicleName: "NISSAN Navara",
-            vehicleDescription: "2.5L Diesel XE 4x2 MT SC Pick-up",
+            vehicleDescription: "Double Cab QR25Hi 2.5L Pick -Up 4WD 4Doors",
 
             category: "Truck",
             modelYear: "2025",
             country: "South Africa",
 
-            productionMonth: "3",
+            productionMonth: "5",
             productionYear: "2025",
 
             vin: "ADNCAND2*Z***",
 
-            maxWeight: "2950 kg",
-            curbWeight: "1182 kg",
+            maxWeight: "2750 kg",
+            curbWeight: "1823 kg",
 
-            frontAxle: "885 kg",
-            rearAxle: "1200 kg",
+            frontAxle: "1320 kg",
+            rearAxle: "1700 kg",
 
-            length: "5240 mm",
+            length: "5340 mm",
             width: "1850 mm",
             height: "1815 mm",
 
