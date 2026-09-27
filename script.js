@@ -11,18 +11,18 @@ const vehicles = [
 
         data: {
             ccrNumber: "551821",
-            approvedDate: "26 MAI 2025",
+            approvedDate: "30 JUL 2025",
 
             manufacturer: "Nissan Motor Co. Ltd",
 
             vehicleName: "NISSAN Navara",
-            vehicleDescription: "Double Cab QR25Hi 2.5L Pick -Up 4WD 4Doors",
+            vehicleDescription: "D23 DC 2.5 LE Plus 4X4 MT(PICK UP)",
 
             category: "Truck",
             modelYear: "2025",
             country: "South Africa",
 
-            productionMonth: "5",
+            productionMonth: "7",
             productionYear: "2025",
 
             vin: "ADNCAND2*Z***",
@@ -55,7 +55,7 @@ const vehicles = [
 
             pollutantLimit: "Comply with Euro4",
 
-            transmission: "Automatic",
+            transmission: "Manual",
 
             ecall: "Not Provided",
 
