@@ -689,6 +689,74 @@ const vehicles = [
                 "This vehicle complies with applicable Gulf technical regulations and safety standards."
         }
     },
+      {
+        route: "/561115",
+
+        data: {
+            ccrNumber: "561115",
+            approvedDate: "	16 AUG 2026",
+
+            manufacturer: "	Toyota Motor Corporation",
+
+            vehicleName: "TOYOTA HILUX (GUN125)",
+            vehicleDescription: "2.4L Pick-up 4WD 4Doors",
+
+            category: "Truck",
+            modelYear: "2026",
+            country: "THAILAND",
+
+            productionMonth: "3",
+            productionYear: "2026",
+
+            vin: "MR0DB9CD*T*******",
+
+            maxWeight: "2910 kg",
+            curbWeight: "1990 kg",
+
+            frontAxle: "1400 kg",
+            rearAxle: "1650 kg",
+
+            length: "5325 mm",
+            width: "1815 mm",
+            height: "1815 mm",
+
+            wheelbase: "3085 mm",
+
+            frontTrack: "1500 mm",
+            rearTrack: "1510 mm",
+
+            bodyType: "Chassis Frame",
+
+            passengers: "6 (Including the Driver)",
+
+            engineType: "Diesel",
+            cylinders: "4",
+            displacement: "2393 cc",
+            airIntake: "Turbo",
+
+            enginePower: "110 kW at 3400 rpm",
+
+            pollutantLimit: "Comply with Euro4",
+
+            transmission: "Manual",
+
+            ecall: "Not Provided",
+
+            serviceBrakes: "Hydraulic",
+
+            emergencyBrakes:
+                "Combined with the service brake",
+
+            vehicleClass: "Light Truck",
+
+            fuelEconomy: "15.5 km/L",
+
+            fuelRating: "Excellent",
+
+            additionalInformation:
+                "Also comply with the National regulations for member countries mentioned in the Annex of the list of Technical Regulations for MV 2026MY-D5, when exporting to those countries. The seating reference point of the lowest seat exceeds 700mm from the ground.Length / Width / Height shown above are(is) longest / widest / highest one(s) and different in each optional feature. This vehicle type complies with ECE13.This certificate is not valid for Saudi Arabia market.For UAE, LED head lamp (UN-ECE149) available."
+        }
+    },
      {
         route: "/508921",
 
